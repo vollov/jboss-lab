@@ -10,3 +10,8 @@ No-interface EJB
 Asynchronous EJB
 
 Contexts and Dependency Injection (CDI)
+
+##Tags
+==================
+v1.0.0 -- ejb with jsf, no JPA
+v1.0.1 -- jpa with jsf

@@ -1,0 +1,10 @@
+standalone.bat # Windows users
+$ standalone.sh # Linux/Unix users
+
+
+[disconnected /] connect
+Connected to localhost:9999
+[localhost:9999 /] :shutdown
+
+jboss-cli.bat --connect command=:shutdown # Windows
+jboss-cli.sh --connect command=:shutdown # Unix / Linux

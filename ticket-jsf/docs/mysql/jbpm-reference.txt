@@ -1,0 +1,2 @@
+https://github.com/droolsjbpm/jbpm-playground
+https://github.com/droolsjbpm/kie-wb-distributions

@@ -2,8 +2,6 @@ package org.demo.books.service;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashMap;
-
 import javax.inject.Inject;
 
 import org.demo.books.domain.Book;
@@ -13,9 +11,6 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.jboss.weld.context.bound.BoundConversationContext;
-import org.jboss.weld.context.bound.MutableBoundRequest;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -27,28 +22,38 @@ import org.junit.runner.RunWith;
 @RunWith(Arquillian.class)
 public class TestBookService {
 
-	@Inject
-	BoundConversationContext conversationContext;
-
-	@Before
-	public void init() {
-		conversationContext
-				.associate(new MutableBoundRequest(new HashMap<String, Object>(), new HashMap<String, Object>()));
-		conversationContext.activate();
-	}
+//	@Inject
+//	BoundConversationContext conversationContext;
+//
+//	@Before
+//	public void init() {
+//		conversationContext
+//				.associate(new MutableBoundRequest(new HashMap<String, Object>(), new HashMap<String, Object>()));
+//		conversationContext.activate();
+//	}
 
 	/**
 	 * deploy book service as a jar
 	 * 
 	 * @return
 	 */
-	@Deployment
-	public static Archive<?> createTestArchive() {
+//	@Deployment
+//	public static Archive<?> createTestArchive() {
+//
+//		JavaArchive jar = ShrinkWrap.create(JavaArchive.class, "books.jar").addPackage(Book.class.getPackage())
+//				.addPackage(BookService.class.getPackage()).addPackage(IsbnGenerator.class.getPackage())
+//				.addPackage(NumberGenerator.class.getPackage()).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+//		System.out.println(jar.toString(true));
+//	    return jar;
+//	}
 
-		return ShrinkWrap.create(JavaArchive.class, "books.jar").addPackage(Book.class.getPackage())
+    @Deployment
+    public static JavaArchive createDeployment() {
+        return ShrinkWrap.create(JavaArchive.class).addPackage(Book.class.getPackage())
 				.addPackage(BookService.class.getPackage()).addPackage(IsbnGenerator.class.getPackage())
 				.addPackage(NumberGenerator.class.getPackage()).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-	}
+		
+    }
 
 	@Inject
 	BookService bookService;

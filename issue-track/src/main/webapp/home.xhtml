@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html">
+   
+<head>
+   <title>JSF Tutorial!</title>
+</head>
+<body>
+   #{hello.message}
+   
+   <h:form>
+   <h3>Using JSF outcome</h3>
+   <h:commandButton action="/stock/getsymbol?faces-redirect=true" value="Stock" />
+	</h:form>
+<hr/>
+
+   <h2>Conditional Navigation</h2>
+      <hr />
+      <h:form>
+      	
+         <h:commandButton action="#{navigationController.showPage}"
+            value="success">
+            <f:param name="pageId" value="1" />
+         </h:commandButton>
+              
+         <h:commandButton action="#{navigationController.showPage}"
+            value="failure">
+            <f:param name="pageId" value="2" />
+         </h:commandButton>
+              
+         <h:commandButton action="#{navigationController.showPage}"
+            value="Home">
+            <f:param name="pageId" value="3" />
+         </h:commandButton>
+      </h:form>
+</body>
+</html>

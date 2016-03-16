@@ -1,0 +1,1 @@
+mvn archetype:create -DgroupId=org.demo.dit -DartifactId=issue-track -DarchetypeArtifactId=maven-archetype-webapp

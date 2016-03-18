@@ -2,6 +2,8 @@ package org.demo.wineshop.beans;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 
 @Singleton(name = "ShopperCount")
 @Startup

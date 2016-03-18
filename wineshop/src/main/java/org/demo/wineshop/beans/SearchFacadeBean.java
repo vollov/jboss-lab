@@ -6,16 +6,19 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.Stateless;
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.InvocationContext;
 
 @Stateless(name = "SearchFacade")
 public class SearchFacadeBean {
 	public SearchFacadeBean() {
 	}
 
-	HashMap countryMap = new HashMap();
+	HashMap<String,String> countryMap = new HashMap<String,String>();
 
-	public List wineSearch(String wineType) {
-		List wineList = new ArrayList();
+	public List<String> wineSearch(String wineType) {
+		List<String> wineList = new ArrayList<String>();
 		if (wineType.equals("Red")) {
 			wineList.add("Bordeaux");
 			wineList.add("Merlot");

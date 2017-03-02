@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>User List</h1>
+		
+			<h:messages errorClass="error" infoClass="info" globalOnly="true" />
+			<h:panelGrid columns="1" border="1" styleClass="smoke">
+				<h:dataTable var="user" value="#{userService.findUsers()}"
+					rendered="#{not empty users}" styleClass="simpletablestyle">
+
+					<h:column>
+						<f:facet name="header">Id</f:facet>
+                #{user.id}
+            </h:column>
+
+			 		<h:column>
+						<f:facet name="header">email</f:facet>
+                #{user.email}
+            </h:column>
+					<h:column>
+						<f:facet name="header">first name</f:facet>
+                #{user.firstName}$
+            </h:column>
+					<h:column>
+						<f:facet name="header">activate</f:facet>
+                #{user.active}
+            </h:column> 
+				</h:dataTable>
+					
+			</h:panelGrid>
+			</ui:define>
+</ui:composition>

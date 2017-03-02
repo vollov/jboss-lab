@@ -1,0 +1,43 @@
+[ubuntu]
+/usr/share/maven/conf/settings.xml
+
+<servers>
+	<server>
+        <id>jboss7.1.1</id>
+        <username>abc</username>
+        <password>xxxxx</password>
+    </server>
+    
+    
+pom.xml
+
+    <properties>
+		<jboss.id>jboss7.1.1</jboss.id>
+		<version.jboss.maven.plugin>7.7.Final</version.jboss.maven.plugin>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	...
+			<plugins>
+				<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>${version.jboss.maven.plugin}</version>
+				<configuration>
+					<force>true</force>
+					<id>${jboss.id}</id>
+					<fileNames>
+						<fileName>target/${plugin.war.warName}.war</fileName>
+					</fileNames>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<deployEnabled>true</deployEnabled>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>

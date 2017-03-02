@@ -6,12 +6,11 @@
         http://java.sun.com/xml/ns/persistence
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="primary">
-		<jta-data-source>java:jboss/datasources/ticketDS</jta-data-source>
-		<class>org.demo.jboss.ticket.model.Seat</class>
-		<class>org.demo.jboss.ticket.model.SeatType</class>
+		<jta-data-source>java:jboss/datasources/sandboxDS</jta-data-source>
+		<class>org.demo.loan.domain.User</class>
 		<properties>
 			<!-- Properties for Hibernate -->
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="false" />
 		</properties>
 	</persistence-unit>

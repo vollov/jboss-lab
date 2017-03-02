@@ -1,0 +1,46 @@
+	<!-- Force the use of the Servlet 3.0 protocol with all containers, as it 
+		is the most mature -->
+	<defaultProtocol type="Servlet 3.0" />
+
+	<!-- Example configuration for a remote JBoss AS 7 instance -->
+	<container qualifier="jboss" default="true">
+		<!-- If you want to use the JBOSS_HOME environment variable, just delete 
+			the jbossHome property -->
+		<configuration>
+            <property name="managementAddress">localhost</property>
+            <property name="managementPort">9999</property>
+			<property name="jbossHome">C:\jboss-as-7.1.1.Final</property>
+		</configuration>
+	</container>
+	
+
+		<!-- 
+		<dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-arquillian-container-managed</artifactId>
+            <version>7.1.1.Final</version>
+            <scope>test</scope>
+        </dependency>
+         -->
+         
+<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+			<version>1.0.0.CR3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core</artifactId>
+			<version>1.1.5.Final</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
+			<scope>test</scope>
+		</dependency>
+	
+
+

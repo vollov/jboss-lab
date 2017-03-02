@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>Home #{userService.hello()}</h1>
+
+        <div id="navigation">
+        
+        <h:commandButton id="load" action="#{userService.findUsers}"
+					value="Load" styleClass="register" />
+					
+				<ul>
+					<li>
+						<h:link id="homeLink" outcome="index" value="Home"/>
+					</li>
+					<li>
+						<h:link outcome="/views/users" value="User List"/>
+					</li>
+					
+				</ul>				
+			</div>
+      
+    </ui:define>
+</ui:composition>
